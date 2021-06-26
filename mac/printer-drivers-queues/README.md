@@ -5,8 +5,8 @@ Before letting these scripts loose in your environment, you'll want to:
 - Install printers to a testing Mac, the manual way
   - Run `lpinfo -m` to get the paths of the driver/PPDs:
     - ```text
-    Library/Printers/PPDs/Contents/Resources/MANUFACTURERMODELA.gz MANUFACTURER MODEL PS
-    ```
+      Library/Printers/PPDs/Contents/Resources/MANUFACTURERMODELA.gz MANUFACTURER MODEL PS
+      ```
     - `MANUFACTURERMODELA` is argument `$5` / `"PPDdriverPath"` (example value) on [install-printer-queues.sh](install-printer-queues.sh)
     - If you have multiple printers by the same manufacturer, it's very likely a lot of your queues may use the same driver/PPDs
 - In Finder, navigate to the folder: `/Library/Printers` (system library, not the user library path)
@@ -14,6 +14,9 @@ Before letting these scripts loose in your environment, you'll want to:
   - Folder: `/Library/Printers/KONICAMINOLTA`
   - Subfolder: `/Library/Printers/KONICAMINOLTA/C759` -- `C759` would be argument `$6` / `"C456"` (example value) in [install-printer-queues.sh](install-printer-queues.sh)
 - Add your queue paths to [uninstall-queues.sh](uninstall-queues.sh), too
+- Set your print server URL in place of **example.com** (and any special characteristics) in:
+  ```bash
+  lpadmin -p "$1" -D "$2" -L "$3" -E -v lpd://print.example.com/"$4" -P "$PPD_PATH" -o printer-is-shared=false -o KMDuplex=Single && echo "$4 added"```
 - A Fiery EFI queue would look something like:
 ```bash
 /Library/Printers/PPDs/Contents/Resources/en.lproj/Fiery CS IC-313 PS2.2
