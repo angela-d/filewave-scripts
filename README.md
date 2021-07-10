@@ -6,7 +6,7 @@ Scripts to build custom filesets for granular control over remote MacOS and Wind
   - ![Contact IT Prompt Filewave](mac/contact-it-recurring-prompt/contact-it-prompt.png)
 
 
-- [Printer Driver Queues](mac/printer-driver-queues) - Easy printer queue and driver deployment with pkg and PPD
+- [Printer Driver Queues](mac/printer-drivers-queues) - Easy printer queue and driver deployment with pkg and PPD
 
 - [Temporary Admin](mac/temporary-admin) - Grant Mac users on-demand privileges for installing apps remotely, remove association when done to revoke privileges
 
