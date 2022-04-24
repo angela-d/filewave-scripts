@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+      <dict>
+        <key>ConsentText</key>
+        <dict>
+          <key>default</key>
+          <string></string>
+        </dict>
+        <key>PayloadContent</key>
+          <array>
+            <dict>
+              <key>PayloadContent</key>
+              <dict>
+                <key>com.google.Chrome.extensions.cjpalhdlnbpafiamejdnhcphjbkeiagm</key>
+                  <dict>
+                  <key>Forced</key>
+                    <array>
+                      <dict>
+                        <key>mcx_preference_settings</key>
+                        <dict>
+                          <key>PayloadDisplayName</key>
+                          <string>uBlock settings</string>
+                          <key>PayloadEnabled</key>
+                          <true/>
+                          <key>PayloadType</key>
+                          <string>com.google.Chrome.extensions.cjpalhdlnbpafiamejdnhcphjbkeiagm</string>
+                          <key>adminSettings</key>
+                          <string>{"userSettings":{"alwaysDetachLogger":true,"autoUpdate":true},"userFilters":"@@||sub.example.com"}</string>
+                        </dict>
+                      </dict>
+                      </array>
+                    </dict>
+                  </dict>
+                  <key>PayloadDisplayName</key>
+                  <string>Custom: (com.google.Chrome.extensions.cjpalhdlnbpafiamejdnhcphjbkeiagm)</string>
+                  <key>PayloadEnabled</key>
+                  <true/>
+                  <key>PayloadIdentifier</key>
+                  <string>uBlockOriginOverride.com.apple.ManagedClient.preferences.zdf018aq-9ac5-4g61-920-7cac56e2258a</string>
+                  <key>PayloadType</key>
+                  <string>com.apple.ManagedClient.preferences</string>
+                  <key>PayloadUUID</key><string>9ac5-4g61-920-7cac56e2258a</string>
+                  <key>PayloadVersion</key>
+                  <integer>1</integer>
+                </dict>
+              </array>
+              <key>PayloadDisplayName</key>
+              <string>Chrome Preferences uBlock My Filters Override</string>
+              <key>PayloadIdentifier</key>
+              <string>uBlockOriginOverride.com.apple.ManagedClient.preferences.zdf018aq-9ac5-4g61-920-7cac56e2258a</string>
+              <key>PayloadOrganization</key>
+              <string>yourorg</string>
+              <key>PayloadRemovalDisallowed</key>
+              <false/>
+              <key>PayloadScope</key>
+              <string>System</string>
+              <key>PayloadType</key>
+              <string>Configuration</string>
+              <key>PayloadUUID</key>
+              <string>9ac5-4g61-920-7cac56e2258a</string>
+              <key>PayloadVersion</key>
+              <integer>1</integer>
+        </dict>
+      </plist>
