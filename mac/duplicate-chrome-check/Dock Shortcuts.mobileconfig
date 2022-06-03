@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>ConsentText</key>
+    <dict>
+      <key>default</key>
+      <string></string>
+    </dict>
+    <key>PayloadContent</key>
+    <array>
+      <dict>
+        <key>PayloadContent</key>
+        <dict>
+          <key>com.apple.dock</key>
+          <dict>
+            <key>Forced</key>
+            <array>
+              <dict>
+                <key>mcx_preference_settings</key>
+                <dict>
+                  <key>static-apps</key>
+                  <array>
+                    <dict>
+                      <key>mcx_typehint</key>
+                      <integer>0</integer>
+                      <key>tile-data</key>
+                      <dict>
+                        <key>file-data</key>
+                        <dict><key>_CFURLString</key>
+                        <string>/Applications/Google Chrome.app</string>
+                        <key>_CFURLStringType</key>
+                        <integer>0</integer>
+                        <key>file-label</key>
+                        <string>Google Chrome.app</string></dict>
+                      </dict>
+                    </dict>
+                    <dict>
+                      <key>mcx_typehint</key>
+                      <integer>0</integer>
+                      <key>tile-data</key>
+                      <dict>
+                        <key>file-data</key>
+                        <dict>
+                          <key>_CFURLString</key>
+                          <string>/Applications/Firefox.app</string>
+                          <key>_CFURLStringType</key>
+                          <integer>0</integer>
+                          <key>file-label</key>
+                          <string>Firefox.app</string>
+                        </dict>
+                      </dict>
+                    </dict>
+                  </array>
+                </dict>
+              </dict>
+            </array>
+          </dict>
+        </dict>
+        <key>PayloadDisplayName</key>
+        <string>Custom: (com.apple.dock)</string>
+        <key>PayloadEnabled</key>
+        <true />
+        <key>PayloadIdentifier</key>
+        <string>dock.shortcuts.com.apple.ManagedClient.preferences.18bfe8f0-646c-48f2-8115-7576df30f732</string>
+        <key>PayloadType</key>
+        <string>com.apple.ManagedClient.preferences</string>
+        <key>PayloadUUID</key>
+        <string>18bfe8f0-646c-48f2-8115-7576df30f732</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+      </dict>
+    </array>
+    <key>PayloadDescription</key>
+    <string>Pin browsers to the dock</string>
+    <key>PayloadDisplayName</key>
+    <string>Dock Shortcuts</string>
+    <key>PayloadIdentifier</key>
+    <string>dock.shortcuts.com.apple.ManagedClient.preferences.18bfe8f0-646c-48f2-8115-7576df30f732</string>
+    <key>PayloadOrganization</key>
+    <string>your_org</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false />
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>q82bed82-f259-410d-a897-f610d690b9da</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+  </dict>
+</plist>
