@@ -55,8 +55,8 @@ In the Filewave Admin client, go to **Clients**
 I set this up as a separate fileset.
 This will include a GUI popup if the user has to reboot for the system extension to finish setup.  (Alternatively, clicking Allow in System Preferences does the job too, but complicates things with some users.)
 
-1. Upload [config-check.sh](config-check.sh) as a verification script
-2. Modify [vpn.plist](vpn.plist) and configure the connection details for your environment
+1. Upload [cleanup-script-config/config-check.sh](cleanup-script-config/config-check.sh) as a verification script
+2. Modify [cleanup-script-config/vpn.plist](cleanup-script-config/vpn.plist) and configure the connection details for your environment
 3. Open the fileset and put **vpn.plist** in the following locations:
   ```text
   Library > Application Support > Fortinet > FortiClient > conf
@@ -66,13 +66,13 @@ This will include a GUI popup if the user has to reboot for the system extension
   ```text
   /var/scripts/[your fileset id]/icon.icns
   ```
-5. Add [systex-reboot-notification.sh](systex-reboot-notification.sh) to:
+5. Add [cleanup-script-config/systex-reboot-notification.sh](cleanup-script-config/systex-reboot-notification.sh) to:
   ```text
   /usr/local/sbin/systex-reboot-notification.sh
   ```
-6. Modify [systex-reboot-notification.sh](systex-reboot-notification.sh) verbiage to match your organization's preferences
+6. Modify [cleanup-script-config/systex-reboot-notification.sh](cleanup-script-config/systex-reboot-notification.sh) verbiage to match your organization's preferences
   - Be sure to set the proper path to your icon.icns file, else the pop up will never show!
-7. Add [uninstall-forticlient.sh](uninstall-forticlient.sh) as a **Pre-uninstallation** script
+7. Add [cleanup-script-config/uninstall-forticlient.sh](cleanup-script-config/uninstall-forticlient.sh) as a **Pre-uninstallation** script
   - This will uninstall Forticlient completely, upon disassociation of the filetset
 8. **Associate this fileset to SG Forticlient Components - no devices plz**
 
