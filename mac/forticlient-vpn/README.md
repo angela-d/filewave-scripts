@@ -85,6 +85,12 @@ This will include a GUI popup if the user has to reboot for the system extension
 4. Upload *your modified* [pkg-preflightuninstall-old-forticlient.sh](pkg-preflight/uninstall-old-forticlient.sh) as a **Pre-flight Script**
   - Be sure to set the line endings to **Unix**
     - I had a low success rate with in-place upgrades; uninstalling old versions prior to PKG install has 100% success rate, though there's a chance you may interrupt active sessions depending on when you deploy.
+5. Setup a **fileset group** that includes the aforementioned script-based fileset and the [Fortinet PPPC.mobileconfig](PPPC.mobileconfig)
+  - Caveat: I am fairly certain these attributes are accurate, but the Forticlient GUI (open Forticlient > click the settings wheel > Privacy Status) still reports these permissions are unset; so far, it doesn't seem to affect usage but there *is* a popup that appears from Forticlient, requesting full disk access for fctservctl
+    - If anyone knows why this occurs, please post in issues!
+    - If the offered PPPC doesn't work, you can also set these permissions manually, from the GUI
+      - [Fortinet's documentation](https://docs.fortinet.com/document/forticlient/6.4.4/macos-release-notes/223986/special-notices) has a nice tutorial with pictures and file paths
+6. Attach the **fileset group** to the *smart group* **SG Forticlient Components - no devices plz**
 
 ## Deploying
 Now that the set up is done, this can be deployed at the literal check of a box!
