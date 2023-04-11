@@ -32,8 +32,7 @@ If you have anything like EFI Fiery, you may also run into security prompts for 
 - You can bypass Gatekeeper by utilizing [gatekeeper-fix.sh](gatekeeper-fix.sh)
 
 ## Compatible MacOS Versions
-- Big Sur 11.4
-- Catalina 10.15
+Used on machines from on Catalina to Ventura, so far.
 
 ## Set Up
 > There may be a better way to build a fileset, at the time of writing I am a newb to Filewave but well-versed in programming, so this is my approach.
@@ -61,6 +60,9 @@ If a user is experiencing missing printers or incomplete printing capabilities, 
 - Client info
 - In the **Fileset status** tab, locate the name of your **Fileset Group** that houses your drivers and queue scripts > select it
 - In the right pane, you should see the installation script; if the script didn't execute and errored out, you'll see that here; otherwise, right-click on it > **View script output** for logs related to the printer stuff
+
+### Credits
+Borrowed code snipped for detecting paused printers from [Jacob Salmela](https://jacobsalmela.com/2015/04/10/bash-script-fix-paused-printers-in-os-x/)
 
 ### Caveat
 [CUPS has deprecated printer drivers](https://www.cups.org/blog/2018-06-06-demystifying-cups-development.html).
