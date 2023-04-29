@@ -17,7 +17,8 @@ Since certbot has been deprecated in favor of snaps, which I am not a fan of, I 
   ```bash
   nano /usr/local/filewave/apache/conf/httpd.conf
   ```
-    - append:
+
+  - append:
 
       ```bash
       Listen 80
@@ -42,3 +43,43 @@ Since certbot has been deprecated in favor of snaps, which I am not a fan of, I 
   ```bash
   02 10 * * 01 /your/path/to/acme.sh --issue -d filewave.example.com -w /usr/local/filewave/apache/htdocs --debug 2
   ```
+
+
+## Troubleshooting
+Renewing a cert in April 2023, I found that the issuer wasn't being included in the fullchain when renewing via Let's Encrypt.  Even attempting a clean install of acme.sh yielded the same results.
+
+Using ZeroSSL got the fullchain so the certificate was recognized properly.
+
+### Missing CA Fix (switching issuers from Let's Encrypt to ZeroSSL)
+For good measure:
+```bash
+acme.sh --upgrade
+```
+
+```bash
+acme.sh --install -m newzerossluser@example.com
+```
+
+```bash
+acme.sh --register-account -m newzerossluser@example.com --server zerossl
+```
+
+Confirm your config changes:
+```bash
+cat ~/.acme.sh/account.conf
+```
+
+### Fixing the Certificate
+New install:
+```bash
+acme.sh --install -d filewave.example.com -w /usr/local/filewave/apache/htdocs --debug 2
+```
+
+Renewing:
+```bash
+acme.sh --renew -d filewave.example.com -w /usr/local/filewave/apache/htdocs --debug 2
+```
+
+**Worth noting:** If you get that generic `Verify error:` message, be sure your perimiter firewall isn't blocking the request.
+
+My first ZeroSSL issuance came from a Comodo IP, based in the UK - so if you are outside of the UK and geo-filter, at least add the UK to port 80 allowance.
