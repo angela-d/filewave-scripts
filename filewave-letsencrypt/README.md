@@ -46,7 +46,7 @@ Since certbot has been deprecated in favor of snaps, which I am not a fan of, I 
 
 
 ## Troubleshooting
-Renewing a cert in April 2023, I found that the issuer wasn't being included in the fullchain when renewing via Let's Encrypt.  Even attempting a clean install of acme.sh yielded the same results.
+Renewing a cert in April 2023, I found that the issuer wasn't being included in the fullchain when renewing via Let's Encrypt and was thereforce deemed 'untrustworthy' by an integral app.  Even attempting a clean install of acme.sh yielded the same results.
 
 Using ZeroSSL got the fullchain so the certificate was recognized properly.
 
