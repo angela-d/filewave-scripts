@@ -83,3 +83,41 @@ acme.sh --renew -d filewave.example.com -w /usr/local/filewave/apache/htdocs --d
 **Worth noting:** If you get that generic `Verify error:` message, be sure your perimiter firewall isn't blocking the request.
 
 My first ZeroSSL issuance came from a Comodo IP, based in the UK - so if you are outside of the UK and geo-filter, at least add the UK to port 80 allowance.
+
+
+### Troubleshooting
+After renewing the certificate:
+
+After renewing Filewave’s certificate, profile deployment with the new cert failed with 2 separate error messages:
+
+ - 1 error directly to Apple’s MDM url
+ - A subsequent Max retries (no url specification)
+
+Specifically, the error was triggered on this command in the deploy_certs.sh script: 
+
+```bash
+yes | /usr/local/filewave/python/bin/python /usr/local/filewave/django/manage.pyc update_dep_profile_certs && writeLog "Updated DEP certs"
+```
+
+Upon contacting Filewave (because the later error didn’t specify an Apple URL and Apple's status page shown no issues with MDM):
+
+> Typically, the service status pages are updated when there is a large or wide-spread issue, but there may still be smaller instances that do not make it to the status page if it was very temporary
+>
+> …
+>
+> we can add some custom settings that allow the DEP sync to be more robust/error-resistant
+
+which is the following:
+
+- Modify `/usr/local/filewave/django/filewave/settings_custom.py` by appending: 
+
+```bash
+settings.DEP_DEFAULT_TIMEOUT = (30,30)
+settings.DEP_DEFAULT_LIMIT = 100
+settings.DEP_DEFAULT_RETRY_DELAY = 5
+settings.DEP_DEFAULT_MAX_RETRIES = 10
+```
+ 
+
+- Save
+- Run `fwcontrol server restart`
