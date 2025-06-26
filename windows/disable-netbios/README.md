@@ -2,7 +2,7 @@
 
 ## Pre-flight Checks
 
-- Open Wireshare and search for `netbios` traffic
+- Open Wireshare and search for netbios traffic: `port 137` > Capture
 - In command-prompt, `nbtstat -c` to check for NBT's cache
 
 ## Setup
